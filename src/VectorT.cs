@@ -459,6 +459,22 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Says if the length of the given vector is equal to 1
+		/// </summary>
+		public static bool IsNormalized(Vector2 vector)
+		{
+			return vector.sqrMagnitude == 1;
+		}
+
+		/// <summary>
+		/// Says if the length of the given vector is equal to 1
+		/// </summary>
+		public static bool IsNormalized(Vector3 vector)
+		{
+			return vector.sqrMagnitude == 1;
+		}
+
+		/// <summary>
 		/// Sets the length of the vector to the given length (1 by default)
 		/// </summary>
 		public static Vector2 Normalize(Vector2 vector, float length = 1)
@@ -505,6 +521,22 @@ namespace Com.Surbon.UnityUtils.Math
 		public static Vector2 PolarToCartesian(float r, float th)
 		{
 			return new Vector2(r * Mathf.Cos(th), r * Mathf.Sin(th));
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values to the power of pow
+		/// </summary>
+		public static Vector2 Pow(Vector2 vector, float pow)
+		{
+			return new Vector2(Mathf.Pow(vector.x, pow), Mathf.Pow(vector.y, pow));
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values to the power of pow
+		/// </summary>
+		public static Vector3 Pow(Vector3 vector, float pow)
+		{
+			return new Vector3(Mathf.Pow(vector.x, pow), Mathf.Pow(vector.y, pow), Mathf.Pow(vector.z, pow));
 		}
 
 		/// <summary>
