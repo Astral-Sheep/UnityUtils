@@ -325,6 +325,42 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the cross product of the given vectors
+		/// </summary>
+		public static float Cross(Vector2 vector1, Vector2 vector2)
+		{
+			return vector1.x * vector2.y - vector1.y * vector2.x;
+		}
+
+		/// <summary>
+		/// Returns the normal vector of the plane defined by the given vectors
+		/// </summary>
+		public static Vector3 Cross(Vector3 vector1, Vector3 vector2)
+		{
+			return new Vector3(
+				vector1.y * vector2.z - vector1.z * vector2.y,
+				vector1.z * vector2.x - vector1.x * vector2.z,
+				vector1.x * vector2.y - vector1.y * vector2.x
+				);
+		}
+
+		/// <summary>
+		/// Returns the distance squared between the given vectors
+		/// </summary>
+		public static float DistanceSquared(Vector2 vector1, Vector2 vector2)
+		{
+			return (vector1.x - vector2.x) * (vector1.x - vector2.x) + (vector1.y - vector2.y) * (vector1.y - vector2.y);
+		}
+
+		/// <summary>
+		/// Returns the distance squared between the given vectors
+		/// </summary>
+		public static float DistanceSquared(Vector3 vector1, Vector3 vector2)
+		{
+			return (vector1.x - vector2.x) * (vector1.x - vector2.x) + (vector1.y - vector2.y) * (vector1.y - vector2.y) + (vector1.z - vector2.z) * (vector1.z * vector2.z);
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
 		/// </summary>
 		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
