@@ -325,5 +325,65 @@ namespace Com.Surbon.UnityUtils.Math
 					return Vector3.positiveInfinity;
 			}
 		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in spheric coordinates
+		/// </summary>
+		/// <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
+		/// <returns>Cartesian coordinates as (x, y, z)</returns>
+		public static Vector3 SphericToCartesian(Vector3 vector)
+		{
+			return new Vector3(
+				vector.x * Mathf.Cos(vector.y) * Mathf.Sin(vector.z),
+				vector.x * Mathf.Cos(vector.z),
+				vector.x * Mathf.Sin(vector.y) * Mathf.Sin(vector.z)
+				);
+		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in spheric coordinates
+		/// </summary>
+		/// <param name="rho">Spheric radius</param>
+		/// <param name="phi">Azimuth angle in radians</param>
+		/// <param name="th">Polar angle in radians</param>
+		/// <returns>Cartesian coordinates as (x, y, z)</returns>
+		public static Vector3 SphericToCartesian(float rho, float phi, float th)
+		{
+			return new Vector3(
+				rho * Mathf.Cos(phi) * Mathf.Sin(th),
+				rho * Mathf.Cos(th),
+				rho * Mathf.Sin(phi) * Mathf.Sin(th)
+				);
+		}
+
+		/// <summary>
+		/// Returns the cylindric coordinates of the vector given in spheric coordinates
+		/// </summary>
+		/// <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
+		/// <returns>Cylindric coordinates as (r, phi, z) with phi in radians</returns>
+		public static Vector3 SphericToCylindric(Vector3 vector)
+		{
+			return new Vector3(
+				vector.x * Mathf.Sin(vector.z),
+				vector.x * Mathf.Cos(vector.z),
+				vector.y
+				);
+		}
+
+		/// <summary>
+		/// Returns the cylindric coordinates of the vector given in spheric coordinates
+		/// </summary>
+		/// <param name="rho">Spheric radius</param>
+		/// <param name="phi">Azimuth angle in radians</param>
+		/// <param name="th">Polar angle in radians</param>
+		/// <returns>Cylindric coordinates as (r, phi, z) with phi in radians</returns>
+		public static Vector3 SphericToCylindric(float rho, float phi, float th)
+		{
+			return new Vector3(
+				rho * Mathf.Sin(th),
+				rho * Mathf.Cos(th),
+				phi
+				);
+		}
 	}
 }
