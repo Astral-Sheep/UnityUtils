@@ -62,7 +62,7 @@ namespace Com.Surbon.UnityUtils.Math
 			switch(axis)
 			{
 				case Axis.X:
-					return Mathf.Atan2(vector.z, vector.y);
+					return Mathf.Atan2(vector.y, -vector.z);
 				case Axis.Y:
 					return Mathf.Atan2(vector.x, vector.z);
 				case Axis.Z:
@@ -573,7 +573,7 @@ namespace Com.Surbon.UnityUtils.Math
 					length = Mathf.Sqrt(vector.x * vector.x + vector.z * vector.z);
 					return new Vector3(Mathf.Sin(angle) * length, vector.y, Mathf.Cos(angle) * length);
 				case Axis.Z:
-					angle = Mathf.Atan2(vector.x, vector.y) + phi;
+					angle = Mathf.Atan2(vector.y, vector.x) + phi;
 					length = Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y);
 					return new Vector3(Mathf.Sin(angle) * length, Mathf.Cos(angle) * length, vector.z);
 				default:
