@@ -3,8 +3,21 @@ using UnityEngine;
 
 namespace Com.Surbon.UnityUtils.Math
 {
+	/// <summary>
+	/// Provides methods for Unity vectors
+	/// </summary>
 	public static class VectorT
 	{
+		/// <summary>
+		/// Enum for 3D axis
+		/// </summary>
+		public enum Axis
+		{
+			X = 0,
+			Y = 1,
+			Z = 2
+		}
+
 		/// <summary>
 		/// Returns the given vector with absolute values
 		/// </summary>
@@ -219,6 +232,98 @@ namespace Com.Surbon.UnityUtils.Math
 				phi,
 				Mathf.Atan2(y, r)
 				);
+		}
+		
+		/// <summary>
+		/// Sets the length of the vector to the given length (1 by default)
+		/// </summary>
+		public static Vector2 Normalize(Vector2 vector, float length = 1)
+		{
+			float l = vector.sqrMagnitude;
+
+			if (l == 0 || l == length * length)
+				return vector;
+
+			l = Mathf.Sqrt(l) / length;
+			return new Vector2(vector.x / l, vector.y / l);
+		}
+
+		/// <summary>
+		/// Sets the length of the vector to the given length (1 by default)
+		/// </summary>
+		public static Vector3 Normalize(Vector3 vector, float length = 1)
+		{
+			float l = vector.sqrMagnitude;
+
+			if (l == 0 || l == length * length)
+				return vector;
+
+			l = Mathf.Sqrt(l) / length;
+			return new Vector3(vector.x / l, vector.y / l, vector.z / l);
+		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in polar coordinates
+		/// </summary>
+		/// <param name="vector">Polar coordinates as (r, th) with th in radians</param>
+		/// <returns>Cartesian coordinates as (x, y)</returns>
+		public static Vector2 PolarToCartesian(Vector2 vector)
+		{
+			return new Vector2(vector.x * Mathf.Cos(vector.y), vector.y * Mathf.Sin(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in polar coordinates
+		/// </summary>
+		/// <param name="r">Radius</param>
+		/// <param name="th">Angle in radians</param>
+		/// <returns>Cartesian coordinates as (x, y)</returns>
+		public static Vector2 PolarToCartesian(float r, float th)
+		{
+			return new Vector2(r * Mathf.Cos(th), r * Mathf.Sin(th));
+		}
+
+		/// <summary>
+		/// Rotates the given vector by the given angle
+		/// </summary>
+		/// <param name="phi">Angle in radians</param>
+		/// <returns>The rotated vector</returns>
+		public static Vector2 Rotate(Vector2 vector, float phi)
+		{
+			float angle = Mathf.Atan2(vector.y, vector.x) - phi;
+			float length = vector.magnitude;
+			return new Vector2(Mathf.Cos(angle) * length, Mathf.Sin(angle) * length);
+		}
+
+		/// <summary>
+		/// Rotates the given vector by the given angle on the given axis
+		/// </summary>
+		/// <param name="phi">Angle in radians</param>
+		/// <param name="axis">Axis on which it turns around</param>
+		/// <returns>The rotated vector</returns>
+		public static Vector3 Rotate(Vector3 vector, float phi, Axis axis)
+		{
+			float angle;
+			float length;
+
+			switch (axis)
+			{
+				case Axis.X:
+					angle = Mathf.Atan2(vector.y, vector.z) + phi;
+					length = Mathf.Sqrt(vector.y * vector.y + vector.z * vector.z);
+					return new Vector3(vector.x, Mathf.Sin(angle) * length, Mathf.Cos(angle) * length);
+				case Axis.Y:
+					angle = Mathf.Atan2(vector.x, vector.z) + phi;
+					length = Mathf.Sqrt(vector.x * vector.x + vector.z * vector.z);
+					return new Vector3(Mathf.Sin(angle) * length, vector.y, Mathf.Cos(angle) * length);
+				case Axis.Z:
+					angle = Mathf.Atan2(vector.x, vector.y) + phi;
+					length = Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y);
+					return new Vector3(Mathf.Sin(angle) * length, Mathf.Cos(angle) * length, vector.z);
+				default:
+					Debug.LogError("How tf did you get here? Returning infinity vector.");
+					return Vector3.positiveInfinity;
+			}
 		}
 	}
 }
