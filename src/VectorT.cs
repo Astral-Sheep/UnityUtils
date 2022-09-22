@@ -261,6 +261,70 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the vector with its length clamped between min and max.
+		/// </summary>
+		/// <param name="min">If min is 0, use <see cref="Vector2.ClampMagnitude(Vector2, float)"/> instead</param>
+		public static Vector2 ClampLength(Vector2 vector, float min, float max)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Clamp(length, min, max);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length clamped between min and max.
+		/// </summary>
+		/// <param name="min">If min is 0, use <see cref="Vector2.ClampMagnitude(Vector2, float)"/> instead</param>
+		public static Vector3 ClampLength(Vector3 vector, float min, float max)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Clamp(length, min, max);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between minX and maxX for x, and minY and maxY for y
+		/// </summary>
+		public static Vector2 ClampValues(Vector2 vector, float minX, float maxX, float minY, float maxY)
+		{
+			return new Vector2(Mathf.Clamp(vector.x, minX, maxX), Mathf.Clamp(vector.y, minY, maxY));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between minX and maxX for x, minY and maxY for y, and minZ and maxZ for z
+		/// </summary>
+		public static Vector3 ClampValues(Vector3 vector, float minX, float maxX, float minY, float maxY, float minZ, float maxZ)
+		{
+			return new Vector3(Mathf.Clamp(vector.x, minX, maxX), Mathf.Clamp(vector.y, minY, maxY), Mathf.Clamp(vector.z, minZ, maxZ));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between min and max
+		/// </summary>
+		public static Vector2 ClampValuesUniform(Vector2 vector, float min, float max)
+		{
+			return new Vector2(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between min and max
+		/// </summary>
+		public static Vector3 ClampValuesUniform(Vector3 vector, float min, float max)
+		{
+			return new Vector3(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max), Mathf.Clamp(vector.z, min, max));
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
 		/// </summary>
 		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
