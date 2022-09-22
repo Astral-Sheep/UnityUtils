@@ -215,6 +215,52 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the vector with its length rounded up
+		/// </summary>
+		public static Vector2 CeilLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Ceil(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length rounded up
+		/// </summary>
+		public static Vector3 CeilLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Ceil(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded up
+		/// </summary>
+		public static Vector2 CeilValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Ceil(vector.x), Mathf.Ceil(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded up
+		/// </summary>
+		public static Vector3 CeilValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Ceil(vector.x), Mathf.Ceil(vector.y), Mathf.Ceil(vector.z));
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
 		/// </summary>
 		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
