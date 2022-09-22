@@ -44,6 +44,36 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the angle of the given vector
+		/// </summary>
+		/// <returns>The angle in radians</returns>
+		public static float Angle(Vector2 vector)
+		{
+			return Mathf.Atan2(vector.y, vector.x);
+		}
+
+		/// <summary>
+		/// Returns the angle of the given vector on the given axis
+		/// </summary>
+		/// <param name="axis">The angle's axis</param>
+		/// <returns>The angle in radians</returns>
+		public static float Angle(Vector3 vector, Axis axis)
+		{
+			switch(axis)
+			{
+				case Axis.X:
+					return Mathf.Atan2(vector.z, vector.y);
+				case Axis.Y:
+					return Mathf.Atan2(vector.x, vector.z);
+				case Axis.Z:
+					return Mathf.Atan2(vector.y, vector.x);
+				default:
+					Debug.LogError("How tf did you get here? Returning infinity");
+					return Mathf.Infinity;
+			}
+		}
+
+		/// <summary>
 		/// Returns the barycenter of the given list of points
 		/// </summary>
 		/// <param name="vectors">The list of points with all weights set to 1</param>
