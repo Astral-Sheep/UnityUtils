@@ -10,6 +10,39 @@ namespace Com.Surbon.UnityUtils.Math
 	public static class MathT
 	{
 		/// <summary>
+		/// Returns the product of all natural numbers lesser than or equal to value
+		/// </summary>
+		public static uint Factorial(uint value)
+		{
+			uint f = 1;
+
+			for (uint i = 1; i <= value; i++)
+			{
+				f *= i;
+			}
+
+			return f;
+		}
+
+		/// <summary>
+		/// Returns the product of all natural numbers lesser than or equal to value
+		/// </summary>
+		public static int Factorial(int value)
+		{
+			if (value < 0)
+				throw new ArgumentOutOfRangeException("The value must be greater than 0.");
+
+			int f = 1;
+
+			for (int i = 1; i <= value; i++)
+			{
+				f *= i;
+			}
+
+			return f;
+		}
+
+		/// <summary>
 		/// Returns value to the power of -pow
 		/// </summary>
 		/// <param name="pow">Must be greater than 0 or it will return 1</param>
@@ -56,6 +89,69 @@ namespace Com.Surbon.UnityUtils.Math
 		public static float Pow(float value, int pow)
 		{
 			return pow < 0 ? NegPow(value, pow * -1) : PosPow(value, pow);
+		}
+
+		/// <summary>
+		/// Returns the sum of all natural numbers lesser than or equal to value
+		/// </summary>
+		public static uint Sum(uint value)
+		{
+			uint s = 0;
+
+			for (uint i = 1; i <= value; i++)
+			{
+				s += i;
+			}
+
+			return s;
+		}
+
+		/// <summary>
+		/// Returns the sum of all natural numbers lesser than or equal to value
+		/// </summary>
+		public static int Sum(int value)
+		{
+			if (value < 0)
+				throw new ArgumentOutOfRangeException("The value must be greater than 0.");
+
+			int s = 0;
+
+			for (int i = 1; i <= value; i++)
+			{
+				s += i;
+			}
+
+			return s;
+		}
+
+		/// <summary>
+		/// Returns the sum of all whole numbers between start and end (if start is greater than end it returns 0)
+		/// </summary>
+		public static uint Sum(uint start, uint end)
+		{
+			uint s = 0;
+
+			for (uint i = start; i <= end; i++)
+			{
+				s += i;
+			}
+
+			return s;
+		}
+
+		/// <summary>
+		/// Returns the sum of all integers between start and end (if start is greater than end it returns 0)
+		/// </summary>
+		public static int Sum(int start, int end)
+		{
+			int s = 0;
+
+			for (int i = start; i <= end; i++)
+			{
+				s += i;
+			}
+
+			return s;
 		}
 	}
 }
