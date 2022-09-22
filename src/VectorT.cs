@@ -629,6 +629,22 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -)
+		/// </summary>
+		public static Vector2 Sign(Vector2 vector)
+		{
+			return new Vector2(Mathf.Sign(vector.x), Mathf.Sign(vector.y));
+		}
+
+		/// <summary>
+		/// Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -)
+		/// </summary>
+		public static Vector3 Sign(Vector3 vector)
+		{
+			return new Vector3(Mathf.Sign(vector.x), Mathf.Sign(vector.y), Mathf.Sign(vector.z));
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in spheric coordinates
 		/// </summary>
 		/// <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
