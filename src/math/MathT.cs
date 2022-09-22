@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Com.Surbon.UnityUtils.Math
 {
 	/// <summary>
-	/// Provides mathematicals method for Unity
+	/// Provides mathematicals method for Unity.
 	/// </summary>
 	public static class MathT
 	{
 		/// <summary>
-		/// Returns the euclidian quotient of a / b
+		/// Returns the euclidian quotient of a / b.
 		/// </summary>
 		public static float EuclidianQuotient(float a, float b)
 		{
@@ -18,7 +17,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the euclidian remainder of a / b
+		/// Returns the euclidian remainder of a / b.
 		/// </summary>
 		public static float EuclidianRemainder(float a, float b)
 		{
@@ -26,7 +25,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the euclidian remainder of a / b
+		/// Returns the euclidian remainder of a / b.
 		/// </summary>
 		public static int EuclidianRemainder(int a, int b)
 		{
@@ -34,7 +33,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the product of all natural numbers lesser than or equal to value
+		/// Returns the product of all natural numbers lesser than or equal to value.
 		/// </summary>
 		public static uint Factorial(uint value)
 		{
@@ -49,7 +48,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the product of all natural numbers lesser than or equal to value
+		/// Returns the product of all natural numbers lesser than or equal to value.
 		/// </summary>
 		public static int Factorial(int value)
 		{
@@ -67,27 +66,27 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns a modulo b
+		/// Returns a modulo b.
 		/// </summary>
-		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(float, float)"/> instead)</param>
+		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(float, float)"/> instead).</param>
 		public static float Mod(float a, float b, bool isPos = true)
 		{
 			return a - Mathf.Floor(a / b) * b - (isPos ? 0 : b);
 		}
 
 		/// <summary>
-		/// Returns a modulo b
+		/// Returns a modulo b.
 		/// </summary>
-		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(int, int)"/> instead)</param>
+		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(int, int)"/> instead).</param>
 		public static int Mod(int a, int b, bool isPos = true)
 		{
 			return a - (int)Mathf.Floor(a / b) * b - (isPos ? 0 : b);
 		}
 
 		/// <summary>
-		/// Returns value to the power of -pow
+		/// Returns value to the power of -pow.
 		/// </summary>
-		/// <param name="pow">Must be greater than 0 or it will return 1</param>
+		/// <param name="pow">Must be greater than 0 or it will return 1.</param>
 		public static float NegPow(float value, int pow)
 		{
 			float p = 1;
@@ -101,7 +100,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the nth root of the given number
+		/// Returns the nth root of the given number.
 		/// </summary>
 		public static float NRoot(float value, float n)
 		{
@@ -110,9 +109,9 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns value to the power of pow
+		/// Returns value to the power of pow.
 		/// </summary>
-		/// <param name="pow">Must be greater than 0 or it will return 1</param>
+		/// <param name="pow">Must be greater than 0 or it will return 1.</param>
 		public static float PosPow(float value, int pow)
 		{
 			float p = 1;
@@ -126,7 +125,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns value to the power of pow
+		/// Returns value to the power of pow.
 		/// </summary>
 		public static float Pow(float value, int pow)
 		{
@@ -134,7 +133,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the sum of all natural numbers lesser than or equal to value
+		/// Returns the sum of all natural numbers lesser than or equal to value.
 		/// </summary>
 		public static uint Sum(uint value)
 		{
@@ -149,7 +148,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the sum of all natural numbers lesser than or equal to value
+		/// Returns the sum of all natural numbers lesser than or equal to value.
 		/// </summary>
 		public static int Sum(int value)
 		{
@@ -167,7 +166,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the sum of all whole numbers between start and end (if start is greater than end it returns 0)
+		/// Returns the sum of all whole numbers between start and end (if start is greater than end it returns 0).
 		/// </summary>
 		public static uint Sum(uint start, uint end)
 		{
@@ -182,7 +181,7 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the sum of all integers between start and end (if start is greater than end it returns 0)
+		/// Returns the sum of all integers between start and end (if start is greater than end it returns 0).
 		/// </summary>
 		public static int Sum(int start, int end)
 		{
