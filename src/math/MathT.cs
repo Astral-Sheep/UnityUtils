@@ -10,6 +10,30 @@ namespace Com.Surbon.UnityUtils.Math
 	public static class MathT
 	{
 		/// <summary>
+		/// Returns the euclidian quotient of a / b
+		/// </summary>
+		public static float EuclidianQuotient(float a, float b)
+		{
+			return Mathf.Floor(a / b);
+		}
+
+		/// <summary>
+		/// Returns the euclidian remainder of a / b
+		/// </summary>
+		public static float EuclidianRemainder(float a, float b)
+		{
+			return a - Mathf.Floor(a / b) * b;
+		}
+
+		/// <summary>
+		/// Returns the euclidian remainder of a / b
+		/// </summary>
+		public static int EuclidianRemainder(int a, int b)
+		{
+			return a - (a / b) * b;
+		}
+
+		/// <summary>
 		/// Returns the product of all natural numbers lesser than or equal to value
 		/// </summary>
 		public static uint Factorial(uint value)
