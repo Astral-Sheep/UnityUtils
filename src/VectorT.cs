@@ -44,6 +44,36 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the angle of the given vector
+		/// </summary>
+		/// <returns>The angle in radians</returns>
+		public static float Angle(Vector2 vector)
+		{
+			return Mathf.Atan2(vector.y, vector.x);
+		}
+
+		/// <summary>
+		/// Returns the angle of the given vector on the given axis
+		/// </summary>
+		/// <param name="axis">The angle's axis</param>
+		/// <returns>The angle in radians</returns>
+		public static float Angle(Vector3 vector, Axis axis)
+		{
+			switch(axis)
+			{
+				case Axis.X:
+					return Mathf.Atan2(vector.z, vector.y);
+				case Axis.Y:
+					return Mathf.Atan2(vector.x, vector.z);
+				case Axis.Z:
+					return Mathf.Atan2(vector.y, vector.x);
+				default:
+					Debug.LogError("How tf did you get here? Returning infinity");
+					return Mathf.Infinity;
+			}
+		}
+
+		/// <summary>
 		/// Returns the barycenter of the given list of points
 		/// </summary>
 		/// <param name="vectors">The list of points with all weights set to 1</param>
@@ -185,6 +215,152 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the vector with its length rounded up
+		/// </summary>
+		public static Vector2 CeilLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Ceil(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length rounded up
+		/// </summary>
+		public static Vector3 CeilLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Ceil(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded up
+		/// </summary>
+		public static Vector2 CeilValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Ceil(vector.x), Mathf.Ceil(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded up
+		/// </summary>
+		public static Vector3 CeilValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Ceil(vector.x), Mathf.Ceil(vector.y), Mathf.Ceil(vector.z));
+		}
+
+		/// <summary>
+		/// Returns the vector with its length clamped between min and max.
+		/// </summary>
+		/// <param name="min">If min is 0, use <see cref="Vector2.ClampMagnitude(Vector2, float)"/> instead</param>
+		public static Vector2 ClampLength(Vector2 vector, float min, float max)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Clamp(length, min, max);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length clamped between min and max.
+		/// </summary>
+		/// <param name="min">If min is 0, use <see cref="Vector2.ClampMagnitude(Vector2, float)"/> instead</param>
+		public static Vector3 ClampLength(Vector3 vector, float min, float max)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Clamp(length, min, max);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between minX and maxX for x, and minY and maxY for y
+		/// </summary>
+		public static Vector2 ClampValues(Vector2 vector, float minX, float maxX, float minY, float maxY)
+		{
+			return new Vector2(Mathf.Clamp(vector.x, minX, maxX), Mathf.Clamp(vector.y, minY, maxY));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between minX and maxX for x, minY and maxY for y, and minZ and maxZ for z
+		/// </summary>
+		public static Vector3 ClampValues(Vector3 vector, float minX, float maxX, float minY, float maxY, float minZ, float maxZ)
+		{
+			return new Vector3(Mathf.Clamp(vector.x, minX, maxX), Mathf.Clamp(vector.y, minY, maxY), Mathf.Clamp(vector.z, minZ, maxZ));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between min and max
+		/// </summary>
+		public static Vector2 ClampValuesUniform(Vector2 vector, float min, float max)
+		{
+			return new Vector2(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values clamped between min and max
+		/// </summary>
+		public static Vector3 ClampValuesUniform(Vector3 vector, float min, float max)
+		{
+			return new Vector3(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max), Mathf.Clamp(vector.z, min, max));
+		}
+
+		/// <summary>
+		/// Returns the cross product of the given vectors
+		/// </summary>
+		public static float Cross(Vector2 vector1, Vector2 vector2)
+		{
+			return vector1.x * vector2.y - vector1.y * vector2.x;
+		}
+
+		/// <summary>
+		/// Returns the normal vector of the plane defined by the given vectors
+		/// </summary>
+		public static Vector3 Cross(Vector3 vector1, Vector3 vector2)
+		{
+			return new Vector3(
+				vector1.y * vector2.z - vector1.z * vector2.y,
+				vector1.z * vector2.x - vector1.x * vector2.z,
+				vector1.x * vector2.y - vector1.y * vector2.x
+				);
+		}
+
+		/// <summary>
+		/// Returns the distance squared between the given vectors
+		/// </summary>
+		public static float DistanceSquared(Vector2 vector1, Vector2 vector2)
+		{
+			return (vector1.x - vector2.x) * (vector1.x - vector2.x) + (vector1.y - vector2.y) * (vector1.y - vector2.y);
+		}
+
+		/// <summary>
+		/// Returns the distance squared between the given vectors
+		/// </summary>
+		public static float DistanceSquared(Vector3 vector1, Vector3 vector2)
+		{
+			return (vector1.x - vector2.x) * (vector1.x - vector2.x) + (vector1.y - vector2.y) * (vector1.y - vector2.y) + (vector1.z - vector2.z) * (vector1.z * vector2.z);
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
 		/// </summary>
 		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
@@ -237,6 +413,68 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 		
 		/// <summary>
+		/// Returns the vector with its length rounded downward
+		/// </summary>
+		public static Vector2 FloorLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Floor(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length rounded downward
+		/// </summary>
+		public static Vector3 FloorLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Floor(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded downward
+		/// </summary>
+		public static Vector2 FloorValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Floor(vector.x), Mathf.Floor(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded downward
+		/// </summary>
+		public static Vector3 FloorValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Floor(vector.x), Mathf.Floor(vector.y), Mathf.Floor(vector.z));
+		}
+
+		/// <summary>
+		/// Says if the length of the given vector is equal to 1
+		/// </summary>
+		public static bool IsNormalized(Vector2 vector)
+		{
+			return vector.sqrMagnitude == 1;
+		}
+
+		/// <summary>
+		/// Says if the length of the given vector is equal to 1
+		/// </summary>
+		public static bool IsNormalized(Vector3 vector)
+		{
+			return vector.sqrMagnitude == 1;
+		}
+
+		/// <summary>
 		/// Sets the length of the vector to the given length (1 by default)
 		/// </summary>
 		public static Vector2 Normalize(Vector2 vector, float length = 1)
@@ -286,6 +524,22 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the given vector with its values to the power of pow
+		/// </summary>
+		public static Vector2 Pow(Vector2 vector, float pow)
+		{
+			return new Vector2(Mathf.Pow(vector.x, pow), Mathf.Pow(vector.y, pow));
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values to the power of pow
+		/// </summary>
+		public static Vector3 Pow(Vector3 vector, float pow)
+		{
+			return new Vector3(Mathf.Pow(vector.x, pow), Mathf.Pow(vector.y, pow), Mathf.Pow(vector.z, pow));
+		}
+
+		/// <summary>
 		/// Rotates the given vector by the given angle
 		/// </summary>
 		/// <param name="phi">Angle in radians</param>
@@ -326,6 +580,68 @@ namespace Com.Surbon.UnityUtils.Math
 					Debug.LogError("How tf did you get here? Returning infinity vector.");
 					return Vector3.positiveInfinity;
 			}
+		}
+
+		/// <summary>
+		/// Returns the given vector with its length rounded
+		/// </summary>
+		public static Vector2 RoundLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Round(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the given vector with its length rounded
+		/// </summary>
+		public static Vector3 RoundLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Round(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values rounded
+		/// </summary>
+		public static Vector2 RoundValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Round(vector.x), Mathf.Round(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values rounded
+		/// </summary>
+		public static Vector3 RoundValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Round(vector.x), Mathf.Round(vector.y), Mathf.Round(vector.z));
+		}
+
+		/// <summary>
+		/// Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -)
+		/// </summary>
+		public static Vector2 Sign(Vector2 vector)
+		{
+			return new Vector2(Mathf.Sign(vector.x), Mathf.Sign(vector.y));
+		}
+
+		/// <summary>
+		/// Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -)
+		/// </summary>
+		public static Vector3 Sign(Vector3 vector)
+		{
+			return new Vector3(Mathf.Sign(vector.x), Mathf.Sign(vector.y), Mathf.Sign(vector.z));
 		}
 
 		/// <summary>
