@@ -413,6 +413,52 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 		
 		/// <summary>
+		/// Returns the vector with its length rounded downward
+		/// </summary>
+		public static Vector2 FloorLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Floor(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its length rounded downward
+		/// </summary>
+		public static Vector3 FloorLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Floor(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded downward
+		/// </summary>
+		public static Vector2 FloorValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Floor(vector.x), Mathf.Floor(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the vector with its values rounded downward
+		/// </summary>
+		public static Vector3 FloorValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Floor(vector.x), Mathf.Floor(vector.y), Mathf.Floor(vector.z));
+		}
+
+		/// <summary>
 		/// Sets the length of the vector to the given length (1 by default)
 		/// </summary>
 		public static Vector2 Normalize(Vector2 vector, float length = 1)
