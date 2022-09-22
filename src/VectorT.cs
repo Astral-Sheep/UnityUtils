@@ -13,9 +13,11 @@ namespace Com.Surbon.UnityUtils.Math
 		/// </summary>
 		public enum Axis
 		{
+			#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member 'Type_or_Member'
 			X = 0,
 			Y = 1,
 			Z = 2
+			#pragma warning restore CS1591
 		}
 
 		/// <summary>
