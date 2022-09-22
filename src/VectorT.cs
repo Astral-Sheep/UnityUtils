@@ -583,6 +583,52 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns the given vector with its length rounded
+		/// </summary>
+		public static Vector2 RoundLength(Vector2 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Round(length);
+			return new Vector2(vector.x / length, vector.y / length);
+		}
+
+		/// <summary>
+		/// Returns the given vector with its length rounded
+		/// </summary>
+		public static Vector3 RoundLength(Vector3 vector)
+		{
+			float length = vector.sqrMagnitude;
+
+			if (length == 0)
+				return vector;
+
+			length = Mathf.Sqrt(length);
+			length /= Mathf.Round(length);
+			return new Vector3(vector.x / length, vector.y / length, vector.z / length);
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values rounded
+		/// </summary>
+		public static Vector2 RoundValues(Vector2 vector)
+		{
+			return new Vector2(Mathf.Round(vector.x), Mathf.Round(vector.y));
+		}
+
+		/// <summary>
+		/// Returns the given vector with its values rounded
+		/// </summary>
+		public static Vector3 RoundValues(Vector3 vector)
+		{
+			return new Vector3(Mathf.Round(vector.x), Mathf.Round(vector.y), Mathf.Round(vector.z));
+		}
+
+		/// <summary>
 		/// Returns the cartesian coordinates of the vector given in spheric coordinates
 		/// </summary>
 		/// <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
