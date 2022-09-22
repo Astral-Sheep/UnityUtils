@@ -12,6 +12,11 @@
     <OutputPath>bin\</OutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <DocumentationFile>C:\Users\thoma\Documents\tools\UnityUtils\UnityUtils.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>dependencies\UnityEngine.dll</HintPath>
