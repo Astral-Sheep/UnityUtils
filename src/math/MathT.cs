@@ -9,6 +9,19 @@ namespace Com.Surbon.UnityUtils.Math
 	public static class MathT
 	{
 		/// <summary>
+		/// The natural number e.
+		/// </summary>
+		public const float E = 2.71828182f;
+		/// <summary>
+		/// The square root of 2.
+		/// </summary>
+		public const float SQRT2 = 1.41421356f;
+		/// <summary>
+		/// The circle constant, the circumference of the unit circle in radians.
+		/// </summary>
+		public const float TAU = 2f * Mathf.PI;
+
+		/// <summary>
 		/// Returns the euclidian quotient of a / b.
 		/// </summary>
 		public static float EuclidianQuotient(float a, float b)

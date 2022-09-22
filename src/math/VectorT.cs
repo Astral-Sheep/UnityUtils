@@ -9,6 +9,15 @@ namespace Com.Surbon.UnityUtils.Math
 	public static class VectorT
 	{
 		/// <summary>
+		/// Shorthand for writing Vector2(-1, -1).
+		/// </summary>
+		public static Vector2 NegOne2 => new Vector2(-1, -1);
+		/// <summary>
+		/// Shorthand for writing Vector3(-1, -1, -1).
+		/// </summary>
+		public static Vector3 NegOne3 => new Vector3(-1, -1, -1);
+
+		/// <summary>
 		/// Enum for 3D axis.
 		/// </summary>
 		public enum Axis
