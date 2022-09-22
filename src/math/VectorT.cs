@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Com.Surbon.UnityUtils.Math
 {
 	/// <summary>
-	/// Provides methods for Unity vectors.
+	/// Provides methods for Unity <see cref="Vector2"/> and <see cref="Vector3"/>.
 	/// </summary>
 	public static class VectorT
 	{
