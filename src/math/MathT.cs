@@ -67,6 +67,24 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
+		/// Returns a modulo b
+		/// </summary>
+		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(float, float)"/> instead)</param>
+		public static float Mod(float a, float b, bool isPos = true)
+		{
+			return a - Mathf.Floor(a / b) * b - (isPos ? 0 : b);
+		}
+
+		/// <summary>
+		/// Returns a modulo b
+		/// </summary>
+		/// <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="EuclidianRemainder(int, int)"/> instead)</param>
+		public static int Mod(int a, int b, bool isPos = true)
+		{
+			return a - (int)Mathf.Floor(a / b) * b - (isPos ? 0 : b);
+		}
+
+		/// <summary>
 		/// Returns value to the power of -pow
 		/// </summary>
 		/// <param name="pow">Must be greater than 0 or it will return 1</param>
