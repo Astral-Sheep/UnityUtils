@@ -105,25 +105,6 @@ namespace Com.Surbon.UnityUtils.Math
 		}
 
 		/// <summary>
-		/// Returns the polar coordinates of the vector given in cartesian coordinates
-		/// </summary>
-		/// <param name="vector">Cartesian coordinates as (x, y)</param>
-		/// <returns>Polar coordinates as (r, th) with th in radians</returns>
-		public static Vector2 CartesianToPolar(Vector2 vector)
-		{
-			return new Vector2(vector.magnitude, Mathf.Atan2(vector.y, vector.x));
-		}
-
-		/// <summary>
-		/// Returns the polar coordinates of the vector given in cartesian coordinates
-		/// </summary>
-		/// <returns>Polar coordinates as (r, th) with th in radians</returns>
-		public static Vector2 CartesianToPolar(float x, float y)
-		{
-			return new Vector2(Mathf.Sqrt(x * x + y * y), Mathf.Atan2(y, x));
-		}
-
-		/// <summary>
 		/// Returns the cylindric coordinates of the vector from the cartesian coordinates
 		/// </summary>
 		/// <param name="vector">Cartesian coordinates as (x, y, z)</param>
@@ -140,6 +121,25 @@ namespace Com.Surbon.UnityUtils.Math
 		public static Vector3 CartesianToCylindric(float x, float y, float z)
 		{
 			return new Vector3(Mathf.Sqrt(x * x + z * z), y, Mathf.Atan2(z, x));
+		}
+
+		/// <summary>
+		/// Returns the polar coordinates of the vector given in cartesian coordinates
+		/// </summary>
+		/// <param name="vector">Cartesian coordinates as (x, y)</param>
+		/// <returns>Polar coordinates as (r, th) with th in radians</returns>
+		public static Vector2 CartesianToPolar(Vector2 vector)
+		{
+			return new Vector2(vector.magnitude, Mathf.Atan2(vector.y, vector.x));
+		}
+
+		/// <summary>
+		/// Returns the polar coordinates of the vector given in cartesian coordinates
+		/// </summary>
+		/// <returns>Polar coordinates as (r, th) with th in radians</returns>
+		public static Vector2 CartesianToPolar(float x, float y)
+		{
+			return new Vector2(Mathf.Sqrt(x * x + y * y), Mathf.Atan2(y, x));
 		}
 
 		/// <summary>
@@ -166,6 +166,58 @@ namespace Com.Surbon.UnityUtils.Math
 				Mathf.Sqrt(x * x + y * y + z * z),
 				Mathf.Atan2(z, x),
 				Mathf.Atan2(y, Mathf.Sqrt(x * x + z * z))
+				);
+		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
+		/// </summary>
+		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
+		/// <returns>Cartesian coordinates as (x, y, z)</returns>
+		public static Vector3 CylindricToCartesian(Vector3 vector)
+		{
+			return new Vector3(vector.x * Mathf.Cos(vector.z), vector.y, vector.x * Mathf.Sin(vector.z));
+		}
+
+		/// <summary>
+		/// Returns the cartesian coordinates of the vector given in cylindric coordinates
+		/// </summary>
+		/// <param name="r">Polar radius</param>
+		/// <param name="y">Cartesian coordinate y</param>
+		/// <param name="phi">Azimuth angle in radians</param>
+		/// <returns>Cartesian coordinates as (x, y, z)</returns>
+		public static Vector3 CylindricToCartesian(float r, float y, float phi)
+		{
+			return new Vector3(r * Mathf.Cos(phi), y, r * Mathf.Sin(phi));
+		}
+
+		/// <summary>
+		/// Returns the spheric coordinates of the vector given in cylindric coordinates
+		/// </summary>
+		/// <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
+		/// <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+		public static Vector3 CylindricToSpheric(Vector3 vector)
+		{
+			return new Vector3(
+				Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y),
+				vector.z,
+				Mathf.Atan2(vector.y, vector.x)
+				);
+		}
+
+		/// <summary>
+		/// Returns the spheric coordinates of the vector given in cylindric coordinates
+		/// </summary>
+		/// <param name="r">Polar radius</param>
+		/// <param name="y">Cartesian coordinate y</param>
+		/// <param name="phi">Azimuth angle in radians</param>
+		/// <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+		public static Vector3 CylindricToSpheric(float r, float y, float phi)
+		{
+			return new Vector3(
+				Mathf.Sqrt(r * r + y * y),
+				phi,
+				Mathf.Atan2(y, r)
 				);
 		}
 	}
