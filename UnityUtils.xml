@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnityUtils</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Surbon.UnityUtils.Math.VectorT">
+            <summary>
+            Provides methods for Unity vectors
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Math.VectorT.Axis">
+            <summary>
+            Enum for 3D axis
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Abs(UnityEngine.Vector2)">
+            <summary>
+            Returns the given vector with absolute values
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Abs(UnityEngine.Vector3)">
+            <summary>
+            Returns the given vector with absolute values
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{UnityEngine.Vector2})">
+            <summary>
+            Returns the barycenter of the given list of points
+            </summary>
+            <param name="vectors">The list of points with all weights set to 1</param>
+            <returns>The barycenter of the points</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{System.ValueTuple{UnityEngine.Vector2,System.Single}})">
+            <summary>
+            Returns the barycenter of the given list of points
+            </summary>
+            <param name="vectors">The list of points and weights</param>
+            <returns>The barycenter of the points</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{UnityEngine.Vector3})">
+            <summary>
+            Returns the barycenter of the given list of points
+            </summary>
+            <param name="vectors">The list of points with all weights set to 1</param>
+            <returns>The barycenter of the points</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{System.ValueTuple{UnityEngine.Vector3,System.Single}})">
+            <summary>
+            Returns the barycenter of the given list of points
+            </summary>
+            <param name="vectors">The list of points and weights</param>
+            <returns>The barycenter of the points</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToCylindric(UnityEngine.Vector3)">
+            <summary>
+            Returns the cylindric coordinates of the vector from the cartesian coordinates
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y, z)</param>
+            <returns>Cylindric coordinates as (r, y, phi) with phi in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToCylindric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in cartesian coordinates
+            </summary>
+            <returns>Cylindric coordinates as (r, y, phi) with phi in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToPolar(UnityEngine.Vector2)">
+            <summary>
+            Returns the polar coordinates of the vector given in cartesian coordinates
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y)</param>
+            <returns>Polar coordinates as (r, th) with th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToPolar(System.Single,System.Single)">
+            <summary>
+            Returns the polar coordinates of the vector given in cartesian coordinates
+            </summary>
+            <returns>Polar coordinates as (r, th) with th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToSpheric(UnityEngine.Vector3)">
+            <summary>
+            Returns the spheric coordinates of the vector from the cartesian coordinates
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y, z)</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToSpheric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the spheric coordinates of the vector from the cartesian coordinates
+            </summary>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToCartesian(UnityEngine.Vector3)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in cylindric coordinates
+            </summary>
+            <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
+            <returns>Cartesian coordinates as (x, y, z)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToCartesian(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in cylindric coordinates
+            </summary>
+            <param name="r">Polar radius</param>
+            <param name="y">Cartesian coordinate y</param>
+            <param name="phi">Azimuth angle in radians</param>
+            <returns>Cartesian coordinates as (x, y, z)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToSpheric(UnityEngine.Vector3)">
+            <summary>
+            Returns the spheric coordinates of the vector given in cylindric coordinates
+            </summary>
+            <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToSpheric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the spheric coordinates of the vector given in cylindric coordinates
+            </summary>
+            <param name="r">Polar radius</param>
+            <param name="y">Cartesian coordinate y</param>
+            <param name="phi">Azimuth angle in radians</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Normalize(UnityEngine.Vector2,System.Single)">
+            <summary>
+            Sets the length of the vector to the given length (1 by default)
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Normalize(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Sets the length of the vector to the given length (1 by default)
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.PolarToCartesian(UnityEngine.Vector2)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in polar coordinates
+            </summary>
+            <param name="vector">Polar coordinates as (r, th) with th in radians</param>
+            <returns>Cartesian coordinates as (x, y)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.PolarToCartesian(System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in polar coordinates
+            </summary>
+            <param name="r">Radius</param>
+            <param name="th">Angle in radians</param>
+            <returns>Cartesian coordinates as (x, y)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Rotate(UnityEngine.Vector2,System.Single)">
+            <summary>
+            Rotates the given vector by the given angle
+            </summary>
+            <param name="phi">Angle in radians</param>
+            <returns>The rotated vector</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Rotate(UnityEngine.Vector3,System.Single,Com.Surbon.UnityUtils.Math.VectorT.Axis)">
+            <summary>
+            Rotates the given vector by the given angle on the given axis
+            </summary>
+            <param name="phi">Angle in radians</param>
+            <param name="axis">Axis on which it turns around</param>
+            <returns>The rotated vector</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCartesian(UnityEngine.Vector3)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in spheric coordinates
+            </summary>
+            <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
+            <returns>Cartesian coordinates as (x, y, z)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCartesian(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in spheric coordinates
+            </summary>
+            <param name="rho">Spheric radius</param>
+            <param name="phi">Azimuth angle in radians</param>
+            <param name="th">Polar angle in radians</param>
+            <returns>Cartesian coordinates as (x, y, z)</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCylindric(UnityEngine.Vector3)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in spheric coordinates
+            </summary>
+            <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians</param>
+            <returns>Cylindric coordinates as (r, phi, z) with phi in radians</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCylindric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in spheric coordinates
+            </summary>
+            <param name="rho">Spheric radius</param>
+            <param name="phi">Azimuth angle in radians</param>
+            <param name="th">Polar angle in radians</param>
+            <returns>Cylindric coordinates as (r, phi, z) with phi in radians</returns>
+        </member>
+    </members>
+</doc>
