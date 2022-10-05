@@ -7,12 +7,18 @@ namespace Com.Surbon.UnityUtils.src.monobehaviour
 	/// </summary>
 	public class QuickAccessMonoBehaviour : MonoBehaviour
 	{
+		/// <summary>
+		/// The rotation as euler angles in degrees.
+		/// </summary>
 		public Vector3 EulerAngles
 		{
 			get => transform.eulerAngles;
 			set => transform.eulerAngles = value;
 		}
 
+		/// <summary>
+		/// The rotation as euler angles in degrees relative to the parent <see cref="Transform"/>'s rotation.
+		/// </summary>
 		public Vector3 LocalEulerAngles
 		{
 			get => transform.localEulerAngles;
@@ -46,8 +52,14 @@ namespace Com.Surbon.UnityUtils.src.monobehaviour
 			set => transform.localScale = value;
 		}
 
+		/// <summary>
+		/// The global scale of the object (read only).
+		/// </summary>
 		public Vector3 LossyScale => transform.lossyScale;
 
+		/// <summary>
+		/// The parent of the <see cref="Transform"/>.
+		/// </summary>
 		public Transform Parent
 		{
 			get => transform.parent;
