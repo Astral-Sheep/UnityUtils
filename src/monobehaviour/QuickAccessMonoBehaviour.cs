@@ -7,13 +7,16 @@ namespace Com.Surbon.UnityUtils.src.monobehaviour
 	/// </summary>
 	public class QuickAccessMonoBehaviour : MonoBehaviour
 	{
-		/// <summary>
-		/// The world space position of the <see cref="Transform"/>.
-		/// </summary>
-		public Vector3 Position
+		public Vector3 EulerAngles
 		{
-			get => transform.position;
-			set => transform.position = value;
+			get => transform.eulerAngles;
+			set => transform.eulerAngles = value;
+		}
+
+		public Vector3 LocalEulerAngles
+		{
+			get => transform.localEulerAngles;
+			set => transform.localEulerAngles = value;
 		}
 
 		/// <summary>
@@ -23,15 +26,6 @@ namespace Com.Surbon.UnityUtils.src.monobehaviour
 		{
 			get => transform.localPosition;
 			set => transform.localPosition = value;
-		}
-
-		/// <summary>
-		/// A <see cref="Quaternion"/> that stores the rotation of the <see cref="Transform"/> in world space.
-		/// </summary>
-		public Quaternion Rotation
-		{
-			get => transform.rotation;
-			set => transform.rotation = value;
 		}
 
 		/// <summary>
@@ -50,6 +44,32 @@ namespace Com.Surbon.UnityUtils.src.monobehaviour
 		{
 			get => transform.localScale;
 			set => transform.localScale = value;
+		}
+
+		public Vector3 LossyScale => transform.lossyScale;
+
+		public Transform Parent
+		{
+			get => transform.parent;
+			set => transform.parent = value;
+		}
+
+		/// <summary>
+		/// The world space position of the <see cref="Transform"/>.
+		/// </summary>
+		public Vector3 Position
+		{
+			get => transform.position;
+			set => transform.position = value;
+		}
+
+		/// <summary>
+		/// A <see cref="Quaternion"/> that stores the rotation of the <see cref="Transform"/> in world space.
+		/// </summary>
+		public Quaternion Rotation
+		{
+			get => transform.rotation;
+			set => transform.rotation = value;
 		}
 	}
 }
