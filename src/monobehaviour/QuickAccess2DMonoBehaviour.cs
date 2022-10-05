@@ -25,6 +25,14 @@ namespace Com.Surbon.UnityUtils.Mono
 			set => transform.localScale = new Vector3(value.x, value.y, transform.localScale.z);
 		}
 
+		public Vector2 LossyScale2D => new Vector2(transform.lossyScale.x, transform.lossyScale.y);
+
+		public Transform Parent
+		{
+			get => transform.parent;
+			set => transform.parent = value;
+		}
+
 		public Vector2 Position2D
 		{
 			get => new Vector2(transform.position.x, transform.position.y);
