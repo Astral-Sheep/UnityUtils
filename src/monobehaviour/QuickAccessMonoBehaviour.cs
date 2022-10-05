@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Com.Surbon.UnityUtils.src.monobehaviour
+namespace Com.Surbon.UnityUtils.Mono
 {
 	/// <summary>
 	/// A <see cref="MonoBehaviour"/> with properties added to access some <see cref="Transform"/> properties faster.
