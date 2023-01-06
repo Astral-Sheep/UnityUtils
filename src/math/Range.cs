@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
-
-namespace Com.Surbon.UnityUtils.src.math
+﻿namespace Com.Surbon.UnityUtils.src.math
 {
 	/// <summary>
 	/// Representation of a range of numbers.
