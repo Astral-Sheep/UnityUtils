@@ -469,6 +469,46 @@
             <param name="th">Polar angle in radians.</param>
             <returns>Cylindric coordinates as (r, phi, z) with phi in radians.</returns>
         </member>
+        <member name="T:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour">
+            <summary>
+            A <see cref="T:UnityEngine.MonoBehaviour"/> with properties added to access some <see cref="T:UnityEngine.Transform"/>'s properties faster and made for 2D behaviours.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalPosition2D">
+            <summary>
+            Position of the <see cref="T:UnityEngine.Transform"/> on the x and y axis relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalRotation2D">
+            <summary>
+            The rotation on the z axis in degrees relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalScale2D">
+            <summary>
+            The scale of the <see cref="T:UnityEngine.Transform"/> on the x and y axis relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LossyScale2D">
+            <summary>
+            The global scale on the x and y axis of the object (Read Only).
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Parent">
+            <summary>
+            The parent of the <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Position2D">
+            <summary>
+            The world space position of the <see cref="T:UnityEngine.Transform"/> on the x and y axis.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Rotation2D">
+            <summary>
+            The rotation on the z axis in degrees.
+            </summary>
+        </member>
         <member name="T:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour">
             <summary>
             A <see cref="T:UnityEngine.MonoBehaviour"/> with properties added to access some <see cref="T:UnityEngine.Transform"/> properties faster.
