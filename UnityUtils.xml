@@ -110,7 +110,18 @@
         </member>
         <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.Rotate(UnityEngine.Quaternion,System.Single,UnityEngine.Vector3)">
             <summary>
-            Returns the given quaternion rotated by the given angle on the given axis.
+            Returns the given <see cref="T:UnityEngine.Quaternion"/> rotated by the given angle on the given axis.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.GetAngle(UnityEngine.Quaternion)">
+            <summary>
+            Returns the angle of the given <see cref="T:UnityEngine.Quaternion"/>.
+            </summary>
+            <returns>The angle in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.GetAxis(UnityEngine.Quaternion)">
+            <summary>
+            Returns the axis of the given <see cref="T:UnityEngine.Quaternion"/>
             </summary>
         </member>
         <member name="T:Com.Surbon.UnityUtils.Math.VectorT">
@@ -468,6 +479,46 @@
             <param name="phi">Azimuth angle in radians.</param>
             <param name="th">Polar angle in radians.</param>
             <returns>Cylindric coordinates as (r, phi, z) with phi in radians.</returns>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.src.math.Range">
+            <summary>
+            Representation of a range of numbers.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.src.math.Range.Min">
+            <summary>
+            The minimum value of the range.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.src.math.Range.Max">
+            <summary>
+            The maximum value of the range.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.src.math.Range._min">
+            <summary>
+            The internal minimum value of the range.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.src.math.Range._max">
+            <summary>
+            The internal maximum value of the range.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.src.math.Range.BelongsTo(System.Single)">
+            <summary>
+            Says if the given number belongs to the range.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.src.math.Range.GetRandom">
+            <summary>
+            Returns a random number between the minimum and the maximum.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.src.math.Range.BelongsTo(System.Single,System.Single,System.Single)">
+            <summary>
+            Says if the given number belongs to the given range.
+            </summary>
         </member>
         <member name="T:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour">
             <summary>
