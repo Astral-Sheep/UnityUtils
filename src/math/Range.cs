@@ -1,8 +1,12 @@
-﻿namespace Com.Surbon.UnityUtils.src.math
+﻿using System;
+using UnityEngine;
+
+namespace Com.Surbon.UnityUtils.Math
 {
 	/// <summary>
 	/// Representation of a range of numbers.
 	/// </summary>
+	[Serializable]
 	public struct Range
 	{
 		/// <summary>
@@ -38,11 +42,11 @@
 		/// <summary>
 		/// The internal minimum value of the range.
 		/// </summary>
-		private float _min;
+		[SerializeField] private float _min;
 		/// <summary>
 		/// The internal maximum value of the range.
 		/// </summary>
-		private float _max;
+		[SerializeField] private float _max;
 
 		/// <summary>
 		/// Says if the given number belongs to the range.
