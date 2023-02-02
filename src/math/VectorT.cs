@@ -555,7 +555,7 @@ namespace Com.Surbon.UnityUtils.Math
 		/// <returns>The rotated vector.</returns>
 		public static Vector2 Rotate(Vector2 vector, float phi)
 		{
-			float angle = Mathf.Atan2(vector.y, vector.x) - phi;
+			float angle = Mathf.Atan2(vector.y, vector.x) + phi;
 			float length = vector.magnitude;
 			return new Vector2(Mathf.Cos(angle) * length, Mathf.Sin(angle) * length);
 		}

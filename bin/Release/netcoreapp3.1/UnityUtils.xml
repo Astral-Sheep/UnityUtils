@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnityUtils</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Surbon.UnityUtils.Math.MathT">
+            <summary>
+            Provides mathematicals method for Unity.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.Math.MathT.E">
+            <summary>
+            The natural number e.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.Math.MathT.SQRT2">
+            <summary>
+            The square root of 2.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.Math.MathT.TAU">
+            <summary>
+            The circle constant, the circumference of the unit circle in radians.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.EuclidianQuotient(System.Single,System.Single)">
+            <summary>
+            Returns the euclidian quotient of a / b.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.EuclidianRemainder(System.Single,System.Single)">
+            <summary>
+            Returns the euclidian remainder of a / b.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.EuclidianRemainder(System.Int32,System.Int32)">
+            <summary>
+            Returns the euclidian remainder of a / b.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Factorial(System.UInt32)">
+            <summary>
+            Returns the product of all natural numbers lesser than or equal to value.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Factorial(System.Int32)">
+            <summary>
+            Returns the product of all natural numbers lesser than or equal to value.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Mod(System.Single,System.Single,System.Boolean)">
+            <summary>
+            Returns a modulo b.
+            </summary>
+            <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="M:Com.Surbon.UnityUtils.Math.MathT.EuclidianRemainder(System.Single,System.Single)"/> instead).</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Mod(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns a modulo b.
+            </summary>
+            <param name="isPos">If false, it is the negative modulo (if you're sure it will be true, use <see cref="M:Com.Surbon.UnityUtils.Math.MathT.EuclidianRemainder(System.Int32,System.Int32)"/> instead).</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.NegPow(System.Single,System.Int32)">
+            <summary>
+            Returns value to the power of -pow.
+            </summary>
+            <param name="pow">Must be greater than 0 or it will return 1.</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.NRoot(System.Single,System.Single)">
+            <summary>
+            Returns the nth root of the given number.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.PosPow(System.Single,System.Int32)">
+            <summary>
+            Returns value to the power of pow.
+            </summary>
+            <param name="pow">Must be greater than 0 or it will return 1.</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Pow(System.Single,System.Int32)">
+            <summary>
+            Returns value to the power of pow.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Sum(System.UInt32)">
+            <summary>
+            Returns the sum of all natural numbers lesser than or equal to value.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Sum(System.Int32)">
+            <summary>
+            Returns the sum of all natural numbers lesser than or equal to value.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Sum(System.UInt32,System.UInt32)">
+            <summary>
+            Returns the sum of all whole numbers between start and end (if start is greater than end it returns 0).
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.MathT.Sum(System.Int32,System.Int32)">
+            <summary>
+            Returns the sum of all integers between start and end (if start is greater than end it returns 0).
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Math.QuaternionT">
+            <summary>
+            Provides methods for <see cref="T:UnityEngine.Quaternion"/>.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.Rotate(UnityEngine.Quaternion,System.Single,UnityEngine.Vector3)">
+            <summary>
+            Returns the given <see cref="T:UnityEngine.Quaternion"/> rotated by the given angle on the given axis.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.GetAngle(UnityEngine.Quaternion)">
+            <summary>
+            Returns the angle of the given <see cref="T:UnityEngine.Quaternion"/>.
+            </summary>
+            <returns>The angle in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.QuaternionT.GetAxis(UnityEngine.Quaternion)">
+            <summary>
+            Returns the axis of the given <see cref="T:UnityEngine.Quaternion"/>
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Math.Range">
+            <summary>
+            Representation of a range of numbers.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Math.Range.Min">
+            <summary>
+            The minimum value of the range.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Math.Range.Max">
+            <summary>
+            The maximum value of the range.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.Math.Range._min">
+            <summary>
+            The internal minimum value of the range.
+            </summary>
+        </member>
+        <member name="F:Com.Surbon.UnityUtils.Math.Range._max">
+            <summary>
+            The internal maximum value of the range.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.Range.BelongsTo(System.Single)">
+            <summary>
+            Says if the given number belongs to the range.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.Range.GetRandom">
+            <summary>
+            Returns a random number between the minimum and the maximum.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.Range.BelongsTo(System.Single,System.Single,System.Single)">
+            <summary>
+            Says if the given number belongs to the given range.
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Math.VectorT">
+            <summary>
+            Provides methods for Unity <see cref="T:UnityEngine.Vector2"/> and <see cref="T:UnityEngine.Vector3"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Math.VectorT.NegOne2">
+            <summary>
+            Shorthand for writing Vector2(-1, -1).
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Math.VectorT.NegOne3">
+            <summary>
+            Shorthand for writing Vector3(-1, -1, -1).
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Math.VectorT.Axis">
+            <summary>
+            Enum for 3D axis.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Abs(UnityEngine.Vector2)">
+            <summary>
+            Returns the given vector with absolute values.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Abs(UnityEngine.Vector3)">
+            <summary>
+            Returns the given vector with absolute values.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Angle(UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the given vector.
+            </summary>
+            <returns>The angle in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Angle(UnityEngine.Vector3,Com.Surbon.UnityUtils.Math.VectorT.Axis)">
+            <summary>
+            Returns the angle of the given vector on the given axis.
+            </summary>
+            <param name="axis">The angle's axis.</param>
+            <returns>The angle in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{UnityEngine.Vector2})">
+            <summary>
+            Returns the barycenter of the given list of points.
+            </summary>
+            <param name="vectors">The list of points with all weights set to 1.</param>
+            <returns>The barycenter of the points.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{System.ValueTuple{UnityEngine.Vector2,System.Single}})">
+            <summary>
+            Returns the barycenter of the given list of points.
+            </summary>
+            <param name="vectors">The list of points and weights.</param>
+            <returns>The barycenter of the points.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{UnityEngine.Vector3})">
+            <summary>
+            Returns the barycenter of the given list of points.
+            </summary>
+            <param name="vectors">The list of points with all weights set to 1.</param>
+            <returns>The barycenter of the points.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Barycenter(System.Collections.Generic.List{System.ValueTuple{UnityEngine.Vector3,System.Single}})">
+            <summary>
+            Returns the barycenter of the given list of points.
+            </summary>
+            <param name="vectors">The list of points and weights.</param>
+            <returns>The barycenter of the points.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToCylindric(UnityEngine.Vector3)">
+            <summary>
+            Returns the cylindric coordinates of the vector from the cartesian coordinates.
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y, z).</param>
+            <returns>Cylindric coordinates as (r, y, phi) with phi in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToCylindric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in cartesian coordinates.
+            </summary>
+            <returns>Cylindric coordinates as (r, y, phi) with phi in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToPolar(UnityEngine.Vector2)">
+            <summary>
+            Returns the polar coordinates of the vector given in cartesian coordinates.
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y).</param>
+            <returns>Polar coordinates as (r, th) with th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToPolar(System.Single,System.Single)">
+            <summary>
+            Returns the polar coordinates of the vector given in cartesian coordinates.
+            </summary>
+            <returns>Polar coordinates as (r, th) with th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToSpheric(UnityEngine.Vector3)">
+            <summary>
+            Returns the spheric coordinates of the vector from the cartesian coordinates.
+            </summary>
+            <param name="vector">Cartesian coordinates as (x, y, z).</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CartesianToSpheric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the spheric coordinates of the vector from the cartesian coordinates.
+            </summary>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CeilLength(UnityEngine.Vector2)">
+            <summary>
+            Returns the vector with its length rounded up.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CeilLength(UnityEngine.Vector3)">
+            <summary>
+            Returns the vector with its length rounded up.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CeilValues(UnityEngine.Vector2)">
+            <summary>
+            Returns the vector with its values rounded up.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CeilValues(UnityEngine.Vector3)">
+            <summary>
+            Returns the vector with its values rounded up.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampLength(UnityEngine.Vector2,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its length clamped between min and max.
+            </summary>
+            <param name="min">If min is 0, use <see cref="M:UnityEngine.Vector2.ClampMagnitude(UnityEngine.Vector2,System.Single)"/> instead.</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampLength(UnityEngine.Vector3,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its length clamped between min and max.
+            </summary>
+            <param name="min">If min is 0, use <see cref="M:UnityEngine.Vector2.ClampMagnitude(UnityEngine.Vector2,System.Single)"/> instead.</param>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampValues(UnityEngine.Vector2,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its values clamped between minX and maxX for x, and minY and maxY for y.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampValues(UnityEngine.Vector3,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its values clamped between minX and maxX for x, minY and maxY for y, and minZ and maxZ for z.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampValuesUniform(UnityEngine.Vector2,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its values clamped between min and max.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.ClampValuesUniform(UnityEngine.Vector3,System.Single,System.Single)">
+            <summary>
+            Returns the vector with its values clamped between min and max.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Cross(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the cross product of the given vectors.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Cross(UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Returns the normal vector of the plane defined by the given vectors.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.DistanceSquared(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the distance squared between the given vectors.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.DistanceSquared(UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Returns the distance squared between the given vectors.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToCartesian(UnityEngine.Vector3)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in cylindric coordinates.
+            </summary>
+            <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians.</param>
+            <returns>Cartesian coordinates as (x, y, z).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToCartesian(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in cylindric coordinates.
+            </summary>
+            <param name="r">Polar radius.</param>
+            <param name="y">Cartesian coordinate y.</param>
+            <param name="phi">Azimuth angle in radians.</param>
+            <returns>Cartesian coordinates as (x, y, z).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToSpheric(UnityEngine.Vector3)">
+            <summary>
+            Returns the spheric coordinates of the vector given in cylindric coordinates.
+            </summary>
+            <param name="vector">Cylindric coordinates as (r, y, phi) with phi in radians.</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.CylindricToSpheric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the spheric coordinates of the vector given in cylindric coordinates.
+            </summary>
+            <param name="r">Polar radius.</param>
+            <param name="y">Cartesian coordinate y.</param>
+            <param name="phi">Azimuth angle in radians.</param>
+            <returns>Spheric coordinates as (rho, phi, th) with phi and th in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.FloorLength(UnityEngine.Vector2)">
+            <summary>
+            Returns the vector with its length rounded downward.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.FloorLength(UnityEngine.Vector3)">
+            <summary>
+            Returns the vector with its length rounded downward.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.FloorValues(UnityEngine.Vector2)">
+            <summary>
+            Returns the vector with its values rounded downward.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.FloorValues(UnityEngine.Vector3)">
+            <summary>
+            Returns the vector with its values rounded downward.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.IsNormalized(UnityEngine.Vector2)">
+            <summary>
+            Says if the length of the given vector is equal to 1.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.IsNormalized(UnityEngine.Vector3)">
+            <summary>
+            Says if the length of the given vector is equal to 1.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Normalize(UnityEngine.Vector2,System.Single)">
+            <summary>
+            Sets the length of the vector to the given length (1 by default).
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Normalize(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Sets the length of the vector to the given length (1 by default).
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.PolarToCartesian(UnityEngine.Vector2)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in polar coordinates.
+            </summary>
+            <param name="vector">Polar coordinates as (r, th) with th in radians.</param>
+            <returns>Cartesian coordinates as (x, y).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.PolarToCartesian(System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in polar coordinates.
+            </summary>
+            <param name="r">Radius.</param>
+            <param name="th">Angle in radians.</param>
+            <returns>Cartesian coordinates as (x, y).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Pow(UnityEngine.Vector2,System.Single)">
+            <summary>
+            Returns the given vector with its values to the power of pow.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Pow(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Returns the given vector with its values to the power of pow.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Rotate(UnityEngine.Vector2,System.Single)">
+            <summary>
+            Rotates the given vector by the given angle.
+            </summary>
+            <param name="phi">Angle in radians.</param>
+            <returns>The rotated vector.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Rotate(UnityEngine.Vector3,System.Single,Com.Surbon.UnityUtils.Math.VectorT.Axis)">
+            <summary>
+            Rotates the given vector by the given angle on the given axis.
+            </summary>
+            <param name="phi">Angle in radians.</param>
+            <param name="axis">Axis on which it turns around.</param>
+            <returns>The rotated vector.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.RoundLength(UnityEngine.Vector2)">
+            <summary>
+            Returns the given vector with its length rounded.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.RoundLength(UnityEngine.Vector3)">
+            <summary>
+            Returns the given vector with its length rounded.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.RoundValues(UnityEngine.Vector2)">
+            <summary>
+            Returns the given vector with its values rounded.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.RoundValues(UnityEngine.Vector3)">
+            <summary>
+            Returns the given vector with its values rounded.
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Sign(UnityEngine.Vector2)">
+            <summary>
+            Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -).
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.Sign(UnityEngine.Vector3)">
+            <summary>
+            Returns a vector with its values set to the sign of the given vector (1 for + and -1 for -).
+            </summary>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCartesian(UnityEngine.Vector3)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in spheric coordinates.
+            </summary>
+            <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians.</param>
+            <returns>Cartesian coordinates as (x, y, z).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCartesian(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cartesian coordinates of the vector given in spheric coordinates..
+            </summary>
+            <param name="rho">Spheric radius.</param>
+            <param name="phi">Azimuth angle in radians.</param>
+            <param name="th">Polar angle in radians.</param>
+            <returns>Cartesian coordinates as (x, y, z).</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCylindric(UnityEngine.Vector3)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in spheric coordinates.
+            </summary>
+            <param name="vector">Spheric coordinates as (rho, phi, th) with phi and th in radians.</param>
+            <returns>Cylindric coordinates as (r, phi, z) with phi in radians.</returns>
+        </member>
+        <member name="M:Com.Surbon.UnityUtils.Math.VectorT.SphericToCylindric(System.Single,System.Single,System.Single)">
+            <summary>
+            Returns the cylindric coordinates of the vector given in spheric coordinates.
+            </summary>
+            <param name="rho">Spheric radius.</param>
+            <param name="phi">Azimuth angle in radians.</param>
+            <param name="th">Polar angle in radians.</param>
+            <returns>Cylindric coordinates as (r, phi, z) with phi in radians.</returns>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour">
+            <summary>
+            A <see cref="T:UnityEngine.MonoBehaviour"/> with properties added to access some <see cref="T:UnityEngine.Transform"/>'s properties faster and made for 2D behaviours.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalPosition2D">
+            <summary>
+            Position of the <see cref="T:UnityEngine.Transform"/> on the x and y axis relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalRotation2D">
+            <summary>
+            The rotation on the z axis in degrees relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LocalScale2D">
+            <summary>
+            The scale of the <see cref="T:UnityEngine.Transform"/> on the x and y axis relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.LossyScale2D">
+            <summary>
+            The global scale on the x and y axis of the object (Read Only).
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Parent">
+            <summary>
+            The parent of the <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Position2D">
+            <summary>
+            The world space position of the <see cref="T:UnityEngine.Transform"/> on the x and y axis.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccess2DMonoBehaviour.Rotation2D">
+            <summary>
+            The rotation on the z axis in degrees.
+            </summary>
+        </member>
+        <member name="T:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour">
+            <summary>
+            A <see cref="T:UnityEngine.MonoBehaviour"/> with properties added to access some <see cref="T:UnityEngine.Transform"/> properties faster.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.EulerAngles">
+            <summary>
+            The rotation as euler angles in degrees.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.LocalEulerAngles">
+            <summary>
+            The rotation as euler angles in degrees relative to the parent <see cref="T:UnityEngine.Transform"/>'s rotation.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.LocalPosition">
+            <summary>
+            Position of the <see cref="T:UnityEngine.Transform"/> relative to the parent <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.LocalRotation">
+            <summary>
+            The rotation of the <see cref="T:UnityEngine.Transform"/> relative to the <see cref="T:UnityEngine.Transform"/> rotation of the parent.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.LocalScale">
+            <summary>
+            The scale of the <see cref="T:UnityEngine.Transform"/> relative to the <see cref="T:UnityEngine.GameObject"/>'s parent.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.LossyScale">
+            <summary>
+            The global scale of the object (read only).
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.Parent">
+            <summary>
+            The parent of the <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.Position">
+            <summary>
+            The world space position of the <see cref="T:UnityEngine.Transform"/>.
+            </summary>
+        </member>
+        <member name="P:Com.Surbon.UnityUtils.Mono.QuickAccessMonoBehaviour.Rotation">
+            <summary>
+            A <see cref="T:UnityEngine.Quaternion"/> that stores the rotation of the <see cref="T:UnityEngine.Transform"/> in world space.
+            </summary>
+        </member>
+    </members>
+</doc>
