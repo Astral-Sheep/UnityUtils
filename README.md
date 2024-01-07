@@ -7,3 +7,5 @@ Installation:
 - let Unity do its weird things
 
 It's now installed in your project :)
+
+## I will most likely not add anything anymore since I don't have time to work on it
